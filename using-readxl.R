@@ -44,3 +44,11 @@ urbanpop_sel <- read_excel("urbanpop.xlsx", col_names = FALSE, sheet = 2, skip =
 # Print out the first observation from urbanpop_sel
 urbanpop_sel[1,]
 
+# Load the gdata package
+library(gdata)
+
+# Import the second sheet of urbanpop.xls: urban_pop
+urban_pop <- read.xls("urbanpop.xls", sheet = "1967-1974")
+
+# Print the first 11 observations using head()
+head(urban_pop, 11)
