@@ -35,3 +35,12 @@ summary(pop_a)
 
 # Print the summary of pop_b
 summary(pop_b)
+
+# The readxl package is already loaded
+
+# Import the second sheet of urbanpop.xlsx, skipping the first 21 rows: urbanpop_sel
+urbanpop_sel <- read_excel("urbanpop.xlsx", col_names = FALSE, sheet = 2, skip = 21)
+
+# Print out the first observation from urbanpop_sel
+urbanpop_sel[1,]
+
