@@ -77,3 +77,15 @@ getSheets(my_book)
 
 # Save workbook to "renamed.xlsx"
 saveWorkbook(my_book, "renamed.xlsx")
+
+# Load the XLConnect package
+library(XLConnect)
+
+# Build connection to renamed.xlsx: my_book
+my_book <- loadWorkbook("renamed.xlsx")
+
+# Remove the fourth sheet
+removeSheet(my_book, sheet = "summary")
+
+# Save workbook to "clean.xlsx"
+saveWorkbook(my_book, "clean.xlsx")
