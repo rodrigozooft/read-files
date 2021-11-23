@@ -65,3 +65,17 @@ water_json <- toJSON(water)
 
 # Print out water_json
 water_json
+
+# jsonlite is already loaded
+
+# Convert mtcars to a pretty JSON: pretty_json
+pretty_json <- toJSON(mtcars, pretty = TRUE)
+
+# Print pretty_json
+pretty_json
+
+# Minify pretty_json: mini_json
+mini_json <- minify(pretty_json)
+
+# Print mini_json
+mini_json
