@@ -21,3 +21,14 @@ sugar$Date <- as.Date(as_factor(sugar$Date))
 
 # Structure of sugar again
 str(sugar)
+
+# haven is already loaded
+
+# Import person.sav: traits
+traits <- read_sav("person.sav")
+
+# Summarize traits
+summary(traits)
+
+# Print out a subset
+subset(traits, Extroversion > 40 & Agreeableness > 40)
