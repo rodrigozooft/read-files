@@ -60,3 +60,18 @@ latest <- dbGetQuery(con, "SELECT post FROM tweats WHERE date > '2015-09-21'")
 
 # Print latest
 latest
+
+# Connect to the database
+library(DBI)
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname = "tweater",
+                 host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "student",
+                 password = "datacamp")
+
+# Create data frame specific
+specific <- dbGetQuery(con, "SELECT message FROM comments WHERE tweat_id = 77 AND user_id > 4")
+
+# Print specific
+specific
