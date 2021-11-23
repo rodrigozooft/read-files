@@ -110,3 +110,22 @@ dbFetch(res)
 
 # Clear res
 dbClearResult(res)
+
+# Connect to the database
+library(DBI)
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname = "tweater",
+                 host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "student",
+                 password = "datacamp")
+
+# Create the data frame  long_tweats
+long_tweats <- dbSendQuery(con, "SELECT post, date FROM tweats WHERE CHAR_LENGTH(post) > 40")
+long_tweats <- dbFetch(long_tweats)
+
+# Print long_tweats
+print(long_tweats)
+
+# Disconnect from the database
+dbDisconnect(con)
