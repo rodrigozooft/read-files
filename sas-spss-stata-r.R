@@ -7,3 +7,17 @@ sales <- read_sas("sales.sas7bdat")
 
 # Display the structure of sales
 str(sales)
+
+# haven is already loaded
+
+# Import the data from the URL: sugar
+sugar <- read_dta("http://assets.datacamp.com/production/course_1478/datasets/trade.dta")
+
+# Structure of sugar
+str(sugar)
+
+# Convert values in Date column to dates
+sugar$Date <- as.Date(as_factor(sugar$Date))
+
+# Structure of sugar again
+str(sugar)
