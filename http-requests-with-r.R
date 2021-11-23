@@ -48,3 +48,15 @@ download.file(url_xls, destfile = "local_latitude.xls")
 
 # Import the local .xls file with readxl: excel_readxl
 excel_readxl <- read_excel("local_latitud.xls")
+
+# https URL to the wine RData file.
+url_rdata <- "https://s3.amazonaws.com/assets.datacamp.com/production/course_1478/datasets/wine.RData"
+
+# Download the wine file to your working directory
+download.file(url_rdata, destfile = "wine_local.RData")
+
+# Load the wine data into your workspace using load()
+load("wine_local.RData")
+
+# Print out the summary of the wine data
+summary(wine)
