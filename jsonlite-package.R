@@ -40,3 +40,14 @@ sw3$Title
 
 # Is the release year of sw4 later than sw3?
 sw4$Year > sw3$Year
+
+# jsonlite is already loaded
+
+# Challenge 1
+json1 <- '[[1, 2], [3, 4]]'
+fromJSON(json1)
+
+
+# Challenge 2
+json2 <- '[{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}]'
+fromJSON(json2)
