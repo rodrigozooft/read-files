@@ -77,3 +77,18 @@ raw_content <- content(resp, as = "raw")
 
 # Print the head of raw_content
 head(raw_content)
+
+# httr is already loaded
+
+# Get the url
+url <- "http://www.omdbapi.com/?apikey=72bc447a&t=Annie+Hall&y=&plot=short&r=json"
+resp <- GET(url)
+
+# Print resp
+resp
+
+# Print content of resp as text
+content(resp, as = "text")
+
+# Print content of resp
+content(resp)
