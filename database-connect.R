@@ -75,3 +75,18 @@ specific <- dbGetQuery(con, "SELECT message FROM comments WHERE tweat_id = 77 AN
 
 # Print specific
 specific
+
+# Connect to the database
+library(DBI)
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname = "tweater",
+                 host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "student",
+                 password = "datacamp")
+
+# Create data frame short
+short <- dbGetQuery(con, "SELECT id, name FROM users WHERE CHAR_LENGTH(name) < 5")
+
+# Print short
+short
