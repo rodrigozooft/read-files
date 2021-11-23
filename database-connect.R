@@ -45,3 +45,18 @@ elisabeth <- dbGetQuery(con, "SELECT tweat_id FROM comments WHERE user_id = 1")
 
 # Print elisabeth
 elisabeth
+
+# Connect to the database
+library(DBI)
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname = "tweater",
+                 host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "student",
+                 password = "datacamp")
+
+# Import post column of tweats where date is higher than '2015-09-21': latest
+latest <- dbGetQuery(con, "SELECT post FROM tweats WHERE date > '2015-09-21'")
+
+# Print latest
+latest
