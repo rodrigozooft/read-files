@@ -32,3 +32,19 @@ summary(traits)
 
 # Print out a subset
 subset(traits, Extroversion > 40 & Agreeableness > 40)
+
+# haven is already loaded
+
+# Import SPSS data from the URL: work
+work <- read_sav("http://s3.amazonaws.com/assets.datacamp.com/production/course_1478/datasets/employee.sav")
+
+# Display summary of work$GENDER
+summary(work$GENDER)
+
+
+# Convert work$GENDER to a factor
+work$GENDER <- as_factor(work$GENDER)
+
+
+# Display summary of work$GENDER again
+summary(work$GENDER)
