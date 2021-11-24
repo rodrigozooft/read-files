@@ -75,3 +75,11 @@ str(edu_equal_2)
 # Create and print structure of edu_equal_3
 edu_equal_3 <- read.dta(path, convert.underscore= TRUE)
 str(edu_equal_3)
+
+# foreign is already loaded
+
+# Import international.sav as a data frame: demo
+demo <- read.spss("international.sav", to.data.frame = TRUE)
+
+# Create boxplot of gdp variable of demo
+boxplot(demo$gdp)
